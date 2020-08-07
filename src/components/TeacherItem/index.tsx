@@ -22,7 +22,7 @@ export interface TeacherItemProps {
 
 const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
   function createNewConnection() {
-    api.post('/connection', { 
+    api.post('/connections', { 
       user_id: teacher.id 
     })
   }
@@ -49,6 +49,7 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
         </p>
         <a 
           target="_blank"
+          rel="noopener noreferrer"
           onClick={createNewConnection} 
           href={`https://wa.me/${teacher.whatsapp}`}
         >
